@@ -5,7 +5,7 @@ use ntex::http;
 use crate::services;
 
 pub async fn run() -> std::io::Result<()> {
-    std::env::set_var("RUST_LOG", "ntex=info");
+    std::env::set_var("RUST_LOG", "ntex=trace");
     env_logger::init();
     web::HttpServer::new(|| web::App::new()
         .wrap(configure_cors().finish())
@@ -17,7 +17,6 @@ pub async fn run() -> std::io::Result<()> {
 
 fn configure_cors() -> Cors {
     Cors::new()
-        .allowed_origin("*")
         .allowed_methods(vec!["GET", "POST"])
         .allowed_headers(vec![http::header::AUTHORIZATION, http::header::ACCEPT])
         .allowed_header(http::header::CONTENT_TYPE)
