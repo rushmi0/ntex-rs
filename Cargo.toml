@@ -4,9 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [[bin]]
-name = "main"
+name = "ntex-rs"
 path = "src/main/main.rs"
 
 [dependencies]
 ntex = { version = "2.0", features = ["tokio"] }
 ntex-cors = "2.0.0"
+env_logger = "0.11.5"
