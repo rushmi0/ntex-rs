@@ -1,0 +1,12 @@
+[package]
+name = "ntex-rs"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "main"
+path = "src/main/main.rs"
+
+[dependencies]
+ntex = { version = "2.0", features = ["tokio"] }
+ntex-cors = "2.0.0"
